@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>My AI/ML Portfolio</title>
+
+    <style>
+
+        /* ==================== GENERAL ==================== */
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eef3f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        a {
+            color: #17365d;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #0b7dda;
+        }
+
+
+        /* ==================== HEADER ==================== */
+
+        .header {
+            background: linear-gradient(135deg, #17365d, #245b8f);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            margin-bottom: 8px;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        .header h3 {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+
+
+        /* ==================== NAVIGATION ==================== */
+
+        .navbar {
+            background-color: white;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            display: inline-block;
+            margin: 5px 12px;
+            font-weight: bold;
+            color: #17365d;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .navbar a:hover {
+            background-color: #17365d;
+            color: white;
+        }
+
+
+        /* ==================== MAIN CONTAINER ==================== */
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* ==================== HOME ==================== */
+
+        .home {
+            background-color: white;
+            margin-top: 35px;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+        }
+
+        .home-table {
+            width: 100%;
+        }
+
+        .profile-photo {
+            width: 170px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #d9eaf7;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .home h1 {
+            color: #17365d;
+            margin-bottom: 5px;
+        }
+
+        .home h2 {
+            color: #245b8f;
+            font-weight: normal;
+        }
+
+
+        /* ==================== SECTION TITLES ==================== */
+
+        .section-title {
+            text-align: center;
+            color: #17365d;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #245b8f;
+            margin: 8px auto;
+            border-radius: 5px;
+        }
+
+
+        /* ==================== CARDS ==================== */
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .objective {
+            text-align: center;
+            font-size: 17px;
+        }
+
+
+        /* ==================== TABLES ==================== */
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background-color: #17365d;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .data-table td {
+            padding: 14px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .data-table tr:hover {
+            background-color: #f1f7fc;
+        }
+
+        .view-button {
+            display: inline-block;
+            background-color: #17365d;
+            color: white;
+            padding: 7px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .view-button:hover {
+            background-color: #0b7dda;
+            color: white;
+        }
+
+
+        /* ==================== SKILLS ==================== */
+
+        .skills-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .skill h3 {
+            color: #17365d;
+            margin-bottom: 5px;
+        }
+
+
+        /* ==================== PROJECTS ==================== */
+
+        .project {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 6px solid #17365d;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateX(5px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.12);
+        }
+
+        .project h2 {
+            color: #17365d;
+        }
+
+
+        /* ==================== AREAS OF INTEREST ==================== */
+
+        .interest-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 12px;
+        }
+
+        .interest {
+            background-color: white;
+            padding: 18px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #17365d;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .interest:hover {
+            background-color: #17365d;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+
+        /* ==================== CONTACT ==================== */
+
+        .contact {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        input,
+        textarea {
+            width: 80%;
+            max-width: 450px;
+            padding: 12px;
+            margin: 7px;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #245b8f;
+            box-shadow: 0 0 5px rgba(36,91,143,0.3);
+        }
+
+        input[type="submit"] {
+            background-color: #17365d;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 12px 25px;
+            width: auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0b7dda;
+        }
+
+
+        /* ==================== FOOTER ==================== */
+
+        .footer {
+            background: linear-gradient(135deg, #17365d, #245b8f);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+
+        @media (max-width: 700px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .home-table,
+            .home-table tr,
+            .home-table td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .profile-photo {
+                margin-bottom: 20px;
+            }
+
+            .skills-table,
+            .skills-table tr,
+            .skills-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .skill {
+                margin-bottom: 15px;
+            }
+
+            .interest-table,
+            .interest-table tr,
+            .interest-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .interest {
+                margin-bottom: 12px;
+            }
+
+            .navbar a {
+                margin: 3px;
+                padding: 6px 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================== HEADER ==================== -->
+
+<div class="header">
+
+    <h1>MY AI/ML PORTFOLIO</h1>
+
+    <h3>
+        B.Tech 3rd Semester |
+        Artificial Intelligence & Machine Learning
+    </h3>
+
+</div>
+
+
+
+<!-- ==================== NAVIGATION ==================== -->
+
+<div class="navbar">
+
+    <a href="#home">Home</a>
+    <a href="#objective">Objective</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+
+</div>
+
+
+
+<div class="container">
+
+
+<!-- ==================== HOME SECTION ==================== -->
+
+<div id="home" class="home">
+
+    <table class="home-table">
+
+        <tr>
+
+            <!-- PROFILE PHOTO -->
+
+            <td width="30%" align="center">
+
+                <img src="myphoto.jpg.png"
+                     class="profile-photo"
+                     alt="My Photo">
+
+            </td>
+
+
+            <!-- PROFILE INFORMATION -->
+
+            <td width="70%" align="center">
+
+                <h1>Hi, I'm Akhil Kumar Singh</h1>
+
+                <h2>AI & ML Student</h2>
+
+                <p>
+
+                    I am a B.Tech student interested in
+                    Artificial Intelligence, Machine Learning,
+                    Programming and Web Development.
+
+                </p>
+
+                <p>
+
+                    <b>Email:</b>
+
+                    <a href="mailto:akhilsingh.01@gmail.com">
+                        akhilsingh.01@gmail.com
+                    </a>
+
+                </p>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<!-- ==================== CAREER OBJECTIVE ==================== -->
+
+<h1 id="objective" class="section-title">
+    Career Objective
+</h1>
+
+<div class="card objective">
+
+    <p>
+
+        To develop strong technical skills in
+        Artificial Intelligence, Machine Learning,
+        programming and data analysis, and apply my
+        knowledge to real-world problems through
+        practical projects.
+
+    </p>
+
+</div>
+
+
+
+<!-- ==================== EDUCATION ==================== -->
+
+<h1 id="education" class="section-title">
+    Academic Record
+</h1>
+
+
+<table class="data-table">
+
+    <!-- TABLE HEADER -->
+
+    <tr>
+
+        <th>Qualification</th>
+        <th>Status</th>
+        <th>Document</th>
+
+    </tr>
+
+
+    <!-- 10th -->
+
+    <tr>
+
+        <td>10th Standard</td>
+
+        <td>Completed</td>
+
+        <td>
+
+            <a href="10th-marksheet.pdf.pdf"
+               target="_blank"
+               class="view-button">
+
+                View Marksheet
+
+            </a>
+
+        </td>
+
+    </tr>
+
+
+    <!-- 12th -->
+
+    <tr>
+
+        <td>12th Standard</td>
+
+        <td>Completed</td>
+
+        <td>
+
+            <a href="12th-marksheet.pdf.pdf"
+               target="_blank"
+               class="view-button">
+
+                View Marksheet
+
+            </a>
+
+        </td>
+
+    </tr>
+
+
+    <!-- 2nd Semester -->
+
+    <tr>
+
+        <td>B.Tech 2nd Semester</td>
+
+        <td>Completed</td>
+
+        <td>
+
+            <a href="2nd-semester-result.pdf.pdf"
+               target="_blank"
+               class="view-button">
+
+                View Result
+
+            </a>
+
+        </td>
+
+    </tr>
+
+
+    <!-- 3rd Semester -->
+
+    <tr>
+
+        <td>B.Tech 3rd Semester AI/ML</td>
+
+        <td>Currently Studying</td>
+
+        <td>--</td>
+
+    </tr>
+
+</table>
+
+
+
+<!-- ==================== SKILLS ==================== -->
+
+<h1 id="skills" class="section-title">
+    My Skills
+</h1>
+
+
+<table class="skills-table">
+
+    <!-- FIRST ROW -->
+
+    <tr>
+
+        <td>
+
+            <div class="skill">
+
+                <h3>Python</h3>
+
+                Programming
+
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="skill">
+
+                <h3>Java</h3>
+
+                Programming
+
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="skill">
+
+                <h3>AI / ML</h3>
+
+                Machine Learning
+
+            </div>
+
+        </td>
+
+    </tr>
+
+
+    <!-- SECOND ROW -->
+
+    <tr>
+
+        <td>
+
+            <div class="skill">
+
+                <h3>HTML</h3>
+
+                Web Development
+
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="skill">
+
+                <h3>Data Analysis</h3>
+
+                Data Science
+
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="skill">
+
+                <h3>SQL</h3>
+
+                Database
+
+            </div>
+
+        </td>
+
+    </tr>
+
+</table>
+
+
+
+<!-- ==================== PROJECTS ==================== -->
+
+<h1 id="projects" class="section-title">
+    My Projects
+</h1>
+
+
+<!-- PROJECT 1 -->
+
+<div class="project">
+
+    <h2>1. AI Customer Complaint Classifier</h2>
+
+    <p>
+
+        AI-based system that classifies industrial
+        customer complaints into categories such as
+        Technical Issue, Product Quality, Delivery,
+        Payment and Warranty.
+
+    </p>
+
+    <p>
+
+        <b>Technology:</b>
+
+        Python | Machine Learning | NLP
+
+    </p>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project">
+
+    <h2>2. AI Search & Rescue System</h2>
+
+    <p>
+
+        A conceptual AI system designed to analyze
+        information and support search-and-rescue
+        situation awareness.
+
+    </p>
+
+    <p>
+
+        <b>Technology:</b>
+
+        AI | ML | Data Analysis
+
+    </p>
+
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="project">
+
+    <h2>3. Student Portfolio</h2>
+
+    <p>
+
+        Personal portfolio website created using
+        HTML to showcase my education, skills,
+        projects and academic records.
+
+    </p>
+
+    <p>
+
+        <b>Technology:</b>
+
+        HTML
+
+    </p>
+
+</div>
+
+
+
+<!-- ==================== AREAS OF INTEREST ==================== -->
+
+<h1 class="section-title">
+    Areas of Interest
+</h1>
+
+
+<table class="interest-table">
+
+    <tr>
+
+        <td>
+
+            <div class="interest">
+                Artificial Intelligence
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="interest">
+                Machine Learning
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="interest">
+                Programming
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="interest">
+                Web Development
+            </div>
+
+        </td>
+
+    </tr>
+
+</table>
+
+
+
+<!-- ==================== CONTACT ==================== -->
+
+<h1 id="contact" class="section-title">
+    Contact Me
+</h1>
+
+
+<div class="contact">
+
+    <p>
+
+        <b>Email:</b>
+
+        <a href="mailto:akhilsingh.01@gmail.com">
+
+            akhilsingh.01@gmail.com
+
+        </a>
+
+    </p>
+
+
+    <form>
+
+        <input type="text"
+               placeholder="Your Name"
+               size="35">
+
+        <br>
+
+
+        <input type="email"
+               placeholder="Your Email"
+               size="35">
+
+        <br>
+
+
+        <textarea rows="5"
+                  cols="37"
+                  placeholder="Your Message"></textarea>
+
+        <br>
+
+
+        <input type="submit"
+               value="Send Message">
+
+    </form>
+
+</div>
+
+
+
+</div>
+
+
+<!-- ==================== FOOTER ==================== -->
+
+<div class="footer">
+
+    <b>AI/ML Student Portfolio</b>
+
+    <br><br>
+
+    B.Tech 3rd Semester |
+    Artificial Intelligence & Machine Learning
+
+    <br><br>
+
+    © 2026 My Portfolio
+
+</div>
+
+
+</body>
+
+</html>
+```
